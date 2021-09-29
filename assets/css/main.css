@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.rbny-gallery-elementor-widget {
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wpcf7-form-control-wrap input::-webkit-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+  
+.wpcf7-form-control-wrap input:-ms-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+  
+.wpcf7-form-control-wrap input:-moz-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+  
+.wpcf7-form-control-wrap input::-moz-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.wpcf7-form-control-wrap textarea::-webkit-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+  
+.wpcf7-form-control-wrap textarea:-ms-input-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+  
+.wpcf7-form-control-wrap textarea:-moz-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+  
+.wpcf7-form-control-wrap textarea::-moz-placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* row */
+.rbny-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.rbny-col-3 {
+    max-width: 25%;
+    flex: 0 0 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.rbny-col-4 {
+    max-width: 33.3333%;
+    flex: 0 0 33.3333%;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.rbny-item {
+    cursor: pointer;
+    height: 480px;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: all 0.3s;
+    position: relative;
+    padding: 30px;
+    opacity: 0.6;
+    box-sizing: border-box;
+    background-position: center;
+    background-size: cover;
+}
+
+.rbny-item:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    transition: all 0.3s;
+    opacity: 1;
+}
+
+.rbny-item:hover .rbny-item__content {
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+.rbny-item__content {
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.rbny-item__title {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Arial;
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+}
+
+
+/* popup styles */
+
+.rbny-overlay,
+.rbny-overlay-form {
+    position: fixed;
+    display: none;
+    background: rgba(255, 255, 255, 0.7);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9998;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.rbny-popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: auto;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    max-height: 100vh;
+    /* overflow-y: auto; */
+}
+
+.rbny-popup__container {
+    position: relative;
+    background: #fff;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rbny-overlay-form .rbny-popup__container {
+    max-width: 592px;
+} 
+
+.rbny-popup__close {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.rbny-popup__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* slider in popup */
+.rbny-popup__slider-col {
+    max-width: 500px;
+    height: 500px;
+}
+
+.rbny-popup__slider {
+
+}
+
+.rbny-popup__slider-item {
+    height: 500px !important;
+}
+
+.rbny-img {
+    height: 100%;
+}
+
+.rbny-img img {
+    max-width: 100% !important;
+    width: 100%;
+    max-height: 100% !important;
+    height: 100% !important;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+/* customize slick dots */
+.slick-dots {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    top: -50px;
+    padding-left: 0;
+  }
+  .slick-dots li  {
+    list-style: none; 
+  }
+
+  .slick-dots li button {
+    cursor: pointer;
+    margin: 0 6px;
+    font-size: 0px;
+    background: #E5E5EA !important;
+    width: 16px !important;
+    height: 16px !important;
+    border-radius: 50%;
+    border: 2px solid #FE4529;
+    padding: 0 !important;
+  }
+
+  .slick-dots li button:focus {
+    outline-offset: 0px;
+    outline: 0px dotted currentColor;
+  }
+  
+  .slick-dots .slick-active button {
+    background: #FE4529 !important;
+  }
+
+/* content in popup */
+
+.rbny-popup__info {
+    max-width: calc(100% - 500px);
+    padding: 50px 90px;
+    font-family: Arial;
+    flex-grow: 1;
+}
+
+.rbny-popup__info-title {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 70px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.rbny-popup__info-title:before {
+    display: block;
+    width: 172px;
+    height: 5px;
+    position: absolute;
+    left: 0;
+    bottom: -16px;
+    content: '';
+    background: red;
+}
+
+
+.rbny-popup__info-text p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+.rbny-popup__info-btn {
+    text-align: right;
+}
+
+.rbny-btn,
+.wpcf7-form .wpcf7-submit {
+    cursor: pointer;
+    background: #fff !important;
+    border: 1px solid #1e1e1e;
+    letter-spacing: 0.05em;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: 1px;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    color: #1e1e1e !important;
+}
+
+.rbny-btn:hover,
+.wpcf7-form .wpcf7-submit:hover {
+    background: #1e1e1e !important;
+    color: #ffff !important;
+}
+
+/* popup form */
+
+.rbny-popup__form-wrapper {
+    padding: 0 !important;
+}
+
+.wpcf7-form br {
+    display: none;
+}
+
+
+
+.wpcf7-form-control-wrap {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.wpcf7-form-control-wrap input {
+    border: 1px solid #1e1e1e;
+    line-height: 1;
+    border-radius: 1px;
+    padding: 13px 35px;
+    max-width: 100%;
+    width: 100%;
+}
+
+.wpcf7-form-control-wrap textarea {
+    border: 1px solid #1e1e1e;
+    line-height: 1;
+    border-radius: 1px;
+    padding: 13px 35px;
+    max-width: 100%;
+    width: 100%;
+    font-size: 16px;
+    height: 80px;
+    resize: none;
+}
+
+.wpcf7-form-control-wrap textarea:focus,
+.wpcf7-form-control-wrap textarea:focus,
+.wpcf7-form-control-wrap textarea:active,
+.wpcf7-form-control-wrap textarea:active {
+    border: 1px solid #000 !important;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.rbny-popup__form-wrapper {
+    display: none;
+    height: 100%;
+}
+
+.form-success {
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-success p:first-child {
+    color: green;
+    font-weight: 700;
+    text-align: center;
+    font-size: 24px;
+}
+
+.form-success p:last-child {
+    text-align: center;
+}
+
+/* media queries */
+
+@media (max-width: 1600px) {
+    .rbny-col-4 .rbny-item {
+        height: 380px;
+    }
+
+    .rbny-col-3 {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+
+    .rbny-col-3 .rbny-item {
+        height: 380px;
+    }
+}
+
+@media (max-width: 1440px) {
+    .rbny-col-4 .rbny-item {
+        height: 330px;
+    }
+
+    .rbny-col-3 {
+        max-width: 25%;
+        flex: 0 0 25%;
+    }
+
+    .rbny-col-3 .rbny-item {
+        height: 330px;
+    }
+}
+
+@media (max-width: 1200px) {
+   
+    .rbny-popup__slider-item {
+        height: 400px;
+    }
+
+    .rbny-popup__slider-col {
+        width: 400px;
+        height: 400px;
+    }
+
+    .rbny-popup__info {
+        max-width: calc(100% - 400px);
+        padding: 40px 60px;
+    }
+
+    .rbny-popup__info-text p {
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .rbny-popup__info-title {
+        margin-bottom: 50px;
+    }
+
+    .rbny-btn,
+    .wpcf7-form .wpcf7-submit {
+        padding: 15px 30px;
+        font-size: 16px;
+    }
+
+    .rbny-col-3 {
+        max-width: 33%;
+        flex: 0 0 33%;
+    }
+
+}
+
+
+@media (max-width: 1000px) {
+    .rbny-col-4 .rbny-item {
+        height: 260px;
+    }
+
+    .rbny-col-3 .rbny-item {
+        height: 260px;
+    }
+
+    .rbny-popup__slider-item {
+        height: 350px;
+    }
+
+    .rbny-popup__slider-col {
+        width: 350px;
+        height: 350px;
+    }
+
+    .rbny-popup__info {
+        max-width: calc(100% - 350px);
+        padding: 30px 40px;
+    }
+
+    .rbny-popup__info-text p {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    .rbny-popup__info-title {
+        margin-bottom: 50px;
+        font-size: 14px;
+    }
+
+    .rbny-btn,
+    .wpcf7-form .wpcf7-submit {
+        padding: 13px 25px;
+        font-size: 16px;
+    }
+
+    .rbny-popup__info-btn {
+        margin-top: 35px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .rbny-col-4 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .rbny-col-3 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+    .rbny-col-4 .rbny-item {
+        height: 200px;
+    }
+
+    .rbny-col-3 .rbny-item {
+        height: 200px;
+    }
+
+    .rbny-popup__wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .rbny-popup__info {
+        max-width: 100%;
+    }
+
+    .rbny-popup__info-btn {
+        text-align: left;
+        margin-top: 30px;
+    } 
+
+    .rbny-popup__info {
+        padding: 0;
+    }
+
+    .rbny-popup__wrapper {
+        padding: 30px 40px;
+    }
+
+    .rbny-popup__slider-col {
+        margin-top: 30px;
+    }
+
+    .rbny-popup__info-text p {
+        margin-bottom: 11px;
+    }
+
+    .rbny-btn,
+    .wpcf7-form .wpcf7-submit {
+        padding: 11px 20px;
+        font-size: 14px;
+    }
+
+    .rbny-popup__info-title {
+        margin-bottom: 35px;
+    }
+
+    .rbny-popup__info-title:before {
+        width: 94px;
+        height: 3px;
+        bottom: -10px;
+    }
+
+    .rbny-popup {
+        overflow-y: auto;
+    }
+
+    /* form */
+
+    .rbny-popup__form-wrapper {
+        /* padding: 50px 20px; */
+        padding: 50px 0;
+        text-align: center;
+    }
+
+    .wpcf7-form-control-wrap input {
+        padding: 13px 15px;
+        max-width: 100%;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .wpcf7-form-control-wrap textarea {
+        padding: 13px 15px;
+        max-width: 100%;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .rbny-popup__form-wrapper {
+        /* padding: 35px 20px; */
+        padding: 35px 0;
+        text-align: center;
+        padding-top: 75px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .rbny-col-4 .rbny-item {
+        height: 160px;
+    }
+
+    .rbny-col-3 .rbny-item {
+        height: 160px;
+    }
+
+
+    .rbny-popup__wrapper {
+        padding: 30px 20px;
+    }
+
+    .rbny-popup__slider-item {
+        height: 280px;
+    }
+
+    .rbny-popup__slider-col {
+        width: 280px;
+        height: 350px;
+    }
+}
+
+.wpcf7-not-valid-tip {
+    color: #dc3232;
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: normal;
+    display: block;
+}
+
+.wpcf7 form .wpcf7-response-output {
+    margin: 0;
+    font-size: 13px;
+    padding: 0.2em 1em;
+    margin-top: 20px;
+    border: 2px solid #00a0d2;
+}
